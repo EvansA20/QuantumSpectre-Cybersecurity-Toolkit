@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b0d12">
+  <meta name="description" content="A private, browser-based cybersecurity toolkit. Your data stays on your device.">
+  <title>QuantumSpectre — Security toolkit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar">
+      <a class="brand" href="#home" aria-label="QuantumSpectre home"><span class="brand-mark">Q<span>✳</span></span><span>quantum<span class="brand-muted">spectre</span></span></a>
+      <div class="side-label">WORKSPACE</div>
+      <nav class="nav" aria-label="Security tools">
+        <a class="nav-link active" href="#home"><span class="nav-icon">⌂</span> Overview</a>
+        <div class="side-label tools-label">TOOLKIT</div>
+        <a class="nav-link" href="#password-checker"><span class="nav-icon">◈</span> Password checker</a>
+        <a class="nav-link" href="#password-generator"><span class="nav-icon">⟡</span> Password generator</a>
+        <a class="nav-link" href="#hash-calculator"><span class="nav-icon">⌗</span> Hash calculator</a>
+        <a class="nav-link" href="#base64"><span class="nav-icon">↔</span> Base64 encoder</a>
+        <a class="nav-link" href="#url-decoder"><span class="nav-icon">↗</span> URL decoder</a>
+        <a class="nav-link" href="#jwt-inspector"><span class="nav-icon">◉</span> JWT inspector</a>
+        <a class="nav-link" href="#headers"><span class="nav-icon">▤</span> Security headers</a>
+      </nav>
+      <div class="sidebar-bottom"><div class="privacy-icon">◉</div><div><strong>Private by design</strong><p>Tools for your security workflow.</p></div><span class="online-dot"></span></div>
+      <div class="sidebar-foot">QUANTUMSPECTRE <span>v1.0</span></div>
+    </aside>
+
+    <main class="main" id="home">
+      <header class="topbar"><div class="breadcrumb">Workspace <span>/</span> <strong>Overview</strong></div><div class="top-actions"><span class="local-badge"><i></i> LOCAL ONLY</span><button class="avatar" aria-label="User profile">Q</button></div></header>
+      <section class="hero">
+        <div class="hero-copy"><div class="eyebrow"><span></span> YOUR PERSONAL SECURITY WORKSPACE</div><h1>Security tools.<br><em>Zero exposure.</em></h1><p>Practical utilities for everyday security work. Your data never leaves this browser.</p><div class="hero-pills"><span>◉ &nbsp;Client-side only</span><span>⌁ &nbsp;No data stored</span><span>✳ &nbsp;Always available</span></div></div>
+        <div class="hero-art" aria-hidden="true"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="orbit orbit-three"></div><div class="core"><span>Q</span><i></i></div><div class="float-tag tag-top">AES-256 <b>●</b></div><div class="float-tag tag-bottom"><b>✳</b> WEB CRYPTO API</div><div class="art-cross cross-a">+</div><div class="art-cross cross-b">+</div></div>
+      </section>
+      <section class="section-head"><div><div class="eyebrow muted">SECURITY TOOLKIT</div><h2>Choose a tool</h2></div><span class="tool-count">07 TOOLS <b>·</b> READY</span></section>
+      <section class="tool-grid" aria-label="Security utilities">
+        <article class="tool-card" id="password-checker"><div class="card-top"><span class="tool-icon purple">◈</span><span class="card-arrow">↗</span></div><h3>Password strength</h3><p>Check the strength of a password without sending it anywhere.</p><label class="sr-only" for="check-password">Password to check</label><div class="input-wrap"><input id="check-password" type="password" placeholder="Enter a password" autocomplete="off"><button class="reveal-btn" data-toggle="check-password" aria-label="Show password">◉</button></div><div class="strength-track"><span id="strength-bar"></span></div><div class="strength-foot"><span id="strength-label">Enter a password to begin</span><span id="strength-score">—</span></div><div id="strength-tips" class="strength-tips" aria-live="polite"></div></article>
+
+        <article class="tool-card" id="password-generator"><div class="card-top"><span class="tool-icon green">⟡</span><span class="card-arrow">↗</span></div><h3>Password generator</h3><p>Create a strong, random password on this device.</p><label class="sr-only" for="generated-password">Generated password</label><div class="input-wrap"><input id="generated-password" class="mono-input" readonly aria-label="Generated password"><button id="copy-generated" class="reveal-btn" aria-label="Copy generated password">▢</button></div><div class="range-row"><label for="password-length">Length <b id="length-value">20</b></label><input id="password-length" type="range" min="8" max="64" value="20"></div><div class="options-row"><label><input id="opt-upper" type="checkbox" checked> A–Z</label><label><input id="opt-lower" type="checkbox" checked> a–z</label><label><input id="opt-numbers" type="checkbox" checked> 0–9</label><label><input id="opt-symbols" type="checkbox" checked> Symbols</label></div><button class="primary-btn" id="generate-password">↻ &nbsp;Generate password</button></article>
+
+        <article class="tool-card" id="hash-calculator"><div class="card-top"><span class="tool-icon blue">⌗</span><span class="card-arrow">↗</span></div><h3>Hash calculator</h3><p>Generate a cryptographic digest from text.</p><label class="sr-only" for="hash-input">Text to hash</label><textarea id="hash-input" rows="2" placeholder="Enter text to hash…"></textarea><div class="button-row"><select id="hash-algorithm" aria-label="Hash algorithm"><option>SHA-256</option><option>SHA-384</option><option>SHA-512</option><option>SHA-1</option></select><button class="primary-btn compact" id="hash-button">Calculate hash</button></div><div class="result-box mono" id="hash-result" aria-live="polite">Your hash will appear here</div></article>
+
+        <article class="tool-card" id="base64"><div class="card-top"><span class="tool-icon orange">↔</span><span class="card-arrow">↗</span></div><h3>Base64 encoder</h3><p>Encode or decode text to and from Base64.</p><label class="sr-only" for="base64-input">Text or Base64 input</label><textarea id="base64-input" rows="2" placeholder="Enter text or Base64…"></textarea><div class="button-row"><div class="segmented"><button class="selected" data-b64-mode="encode">Encode</button><button data-b64-mode="decode">Decode</button></div><button class="primary-btn compact" id="base64-button">Convert</button></div><div class="result-box mono" id="base64-result" aria-live="polite">Your result will appear here</div></article>
+
+        <article class="tool-card" id="url-decoder"><div class="card-top"><span class="tool-icon cyan">↗</span><span class="card-arrow">↗</span></div><h3>URL decoder</h3><p>Encode or decode URL components safely.</p><label class="sr-only" for="url-input">URL or text input</label><textarea id="url-input" rows="2" placeholder="Paste a URL or encoded text…"></textarea><div class="button-row"><div class="segmented"><button data-url-mode="encode">Encode</button><button class="selected" data-url-mode="decode">Decode</button></div><button class="primary-btn compact" id="url-button">Convert</button></div><div class="result-box mono" id="url-result" aria-live="polite">Your result will appear here</div></article>
+
+        <article class="tool-card" id="jwt-inspector"><div class="card-top"><span class="tool-icon pink">◉</span><span class="card-arrow">↗</span></div><h3>JWT inspector</h3><p>Decode a token and inspect its claims locally.</p><label class="sr-only" for="jwt-input">JWT token</label><textarea id="jwt-input" class="jwt-input" rows="2" placeholder="Paste a JWT token…"></textarea><button class="primary-btn full-btn" id="jwt-button">Inspect token &nbsp;→</button><div id="jwt-result" class="jwt-result" aria-live="polite"><span class="empty-state">Token header and payload will appear here</span></div></article>
+
+        <article class="tool-card headers-card" id="headers"><div class="card-top"><span class="tool-icon yellow">▤</span><span class="card-arrow">↗</span></div><h3>Security headers</h3><p>A quick reference for headers that help protect websites.</p><div class="header-list"><details><summary><code>Content-Security-Policy</code><span>Mitigates injection</span><b>＋</b></summary><p>Controls which sources a browser may load scripts, styles, images, and other resources from. Start with a restrictive policy and tune it to your application.</p></details><details><summary><code>Strict-Transport-Security</code><span>Enforces HTTPS</span><b>＋</b></summary><p>Instructs browsers to access the site only over HTTPS for a set period. Enable only after confirming HTTPS works across your domain.</p></details><details><summary><code>X-Content-Type-Options</code><span>Prevents MIME sniffing</span><b>＋</b></summary><p>Use <code>nosniff</code> to prevent browsers from interpreting a response as a different content type.</p></details><details><summary><code>Referrer-Policy</code><span>Limits referrer data</span><b>＋</b></summary><p>Controls how much referrer information is sent with requests. <code>strict-origin-when-cross-origin</code> is a common starting point.</p></details><details><summary><code>Permissions-Policy</code><span>Restricts browser features</span><b>＋</b></summary><p>Limits access to features such as camera, microphone, and geolocation. Disable any features your application does not need.</p></details><details><summary><code>frame-ancestors</code><span>Helps prevent clickjacking</span><b>＋</b></summary><p>Set this directive in Content-Security-Policy to specify which sites can embed your pages in frames.</p></details></div><div class="reference-note">Headers are configured on your web server. This panel is a reference, not a live site scan.</div></article>
+      </section>
+      <footer class="footer"><span>QUANTUMSPECTRE <b>·</b> SECURITY TOOLKIT</span><span>Built for privacy. <i>●</i> No data leaves your browser.</span><div class="developer-contact"><span>CONTACT DEVELOPER</span><strong>AYANLUDE EVANS ABAYOMI</strong><a href="mailto:eaayanlude@gmail.com">eaayanlude@gmail.com</a><a href="https://wa.me/2348130651446" target="_blank" rel="noopener noreferrer">WhatsApp · +234 813 065 1446</a></div></footer>
+    </main>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
